@@ -1,0 +1,15 @@
+name = "translate-fable"
+type = "javascript"
+
+main = "./build/index.js"
+workers_dev = true
+compatibility_date = "2022-06-02"
+
+[site]
+bucket = "./public"
+
+[build]
+command = "npm run build"
+
+[build.upload]
+format="service-worker"
