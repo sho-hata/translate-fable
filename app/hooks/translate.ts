@@ -1,3 +1,7 @@
 export const toFable = (target: string): string => {
-  return target.replace('\n', '───\n') + '───';
+  return toZenkaku(target).replace('\n', '───\n') + '───';
+};
+
+export const toZenkaku = (target: string): string => {
+  return target.replace('...', '・・・');
 };

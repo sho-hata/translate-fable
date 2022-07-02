@@ -1,17 +1,17 @@
 import { describe, expect, it } from 'vitest';
-import { toFable } from './translate';
+import { toFable, toZenkaku } from './translate';
 
-describe('translate', () => {
+describe('toFable', () => {
   it('一行', () => {
-    const target = 'プロとして';
-    const result = toFable(target);
-
-    expect(result).toBe('プロとして───');
+    expect(toFable('プロとして')).toBe('プロとして───');
   });
   it('複数行', () => {
-    const target = '素晴らしい\nプロやな';
-    const result = toFable(target);
+    expect(toFable('素晴らしい\nプロやな')).toBe('素晴らしい───\nプロやな───');
+  });
+});
 
-    expect(result).toBe('素晴らしい───\nプロやな───');
+describe('toZenkaku', () => {
+  it('三点リーダ', () => {
+    expect(toZenkaku('...')).toBe('・・・');
   });
 });
