@@ -6,7 +6,9 @@ describe('toFable', () => {
     expect(toFable('プロとして')).toBe('プロとして───');
   });
   it('複数行', () => {
-    expect(toFable('素晴らしい\nプロやな')).toBe('素晴らしい───\nプロやな───');
+    expect(toFable('素晴らしい...\nプロやな')).toBe(
+      '素晴らしい・・・───\nプロやな───'
+    );
   });
 });
 
