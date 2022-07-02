@@ -21,13 +21,15 @@ const Index = () => {
   return (
     <>
       <h1>ファブル構文変換</h1>
-      <Form replace method="post">
-        <textarea name="target" />
-        <br />
-        <button type="submit">変換する───</button>
-      </Form>
+      <div style={{ marginBottom: 40, alignItems: 'center' }}>
+        <Form replace method="post">
+          <textarea style={{ width: 1000, height: 400 }} name="target" />
+          <br />
+          <button type="submit">変換する───</button>
+        </Form>
+      </div>
       {actionData?.errors && <span>{actionData.errors.message}</span>}
-      {actionData?.translated}
+      <span style={{ whiteSpace: 'pre-wrap' }}>{actionData?.translated}</span>
     </>
   );
 };
