@@ -7,5 +7,13 @@ export const toZenkaku = (target: string): string => {
 };
 
 export const addEmDashToEnd = (target: string): string => {
+  // 記号だったらそのまま返す
+  if (
+    !target
+      .slice(-1)
+      .match(/[^!"#$%&'()\*\+\-\.,\/:;<=>?@\[\\\]^_`{|}~、。・]+/)
+  ) {
+    return target;
+  }
   return target + '───';
 };
